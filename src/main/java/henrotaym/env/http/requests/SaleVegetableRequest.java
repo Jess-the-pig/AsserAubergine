@@ -1,13 +1,13 @@
 import henrotaym.env.http.requests.relationships.VegetableRelationshipRequest;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.RequiredArgsConstructor;
 
 import java.math.BigInteger;
 
 @Getter
-@Setter
+@RequiredArgsConstructor
 public class SaleVegetableRequest {
-    private BigInteger quantity;
-    private VegetableRelationshipRequest vegetable;
+    private final BigInteger quantity;
+    private final VegetableRelationshipRequest vegetable;
 }

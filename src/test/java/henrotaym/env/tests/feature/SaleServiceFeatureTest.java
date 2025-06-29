@@ -1,5 +1,7 @@
 package henrotaym.env.tests.feature;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import henrotaym.env.ApplicationTest;
 import henrotaym.env.entities.Sale;
 import henrotaym.env.entities.Vegetable;
