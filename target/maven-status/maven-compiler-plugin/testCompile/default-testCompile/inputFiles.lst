@@ -1,0 +1,6 @@
+/opt/apps/app/src/test/java/henrotaym/env/ApplicationTest.java
+/opt/apps/app/src/test/java/henrotaym/env/configurations/FakerConfiguration.java
+/opt/apps/app/src/test/java/henrotaym/env/feature/PlayerEndpointFeatureTest.java
+/opt/apps/app/src/test/java/henrotaym/env/utils/api/JsonClient.java
+/opt/apps/app/src/test/java/henrotaym/env/utils/api/JsonRequest.java
+/opt/apps/app/src/test/java/henrotaym/env/utils/api/JsonResponse.java

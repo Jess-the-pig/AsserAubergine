@@ -1,0 +1,37 @@
+
+spring:
+  profiles:
+    active: http,queue
+  main:
+    web-application-type: none
+  application:
+    name: ${APP_NAME}
+  datasource:
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: jdbc:${DB_CONNECTION}://${DB_HOST}:${DB_PORT}/${DB_DATABASE}
+  liquibase:
+    change-log: classpath:/db/changelog/master.xml
+  kafka:
+    admin:
+      auto-create: true
+    bootstrap-servers: kafka:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: default
+      properties:
+        spring.json.trusted.packages: "henrotaym.env.*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.metrics.push: false
+    listener:
+      ack-mode: manual
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.springframework.data.jpa: DEBUG
+    org.apache.kafka: DEBUG
+    org.springframework.kafka: DEBUG

@@ -1,0 +1,9 @@
+POST http://app:8080/api/plants
+Content-Type: application/json
+
+{
+  "species": "Ficus lyrata",
+  "name": "Figuier de compagnie",
+  "buyingDate": "2024-09-15",
+  "status": "ALIVE"
+}
