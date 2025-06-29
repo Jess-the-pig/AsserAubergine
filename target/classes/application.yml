@@ -1,7 +1,10 @@
 
 spring:
-  profiles:
-    active: http,queue
+  # jpa:
+  #   show-sql: true
+  #   properties:
+  #     hibernate:
+  #       format_sql: true
   main:
     web-application-type: none
   application:
@@ -18,20 +21,14 @@ spring:
     bootstrap-servers: kafka:9092
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: default
       properties:
         spring.json.trusted.packages: "henrotaym.env.*"
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      properties:
-        enable.metrics.push: false
-    listener:
-      ack-mode: manual
-logging:
-  level:
-    org.hibernate.orm.jdbc.bind: TRACE
-    org.springframework.data.jpa: DEBUG
-    org.apache.kafka: DEBUG
-    org.springframework.kafka: DEBUG
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+# logging:
+#   level:
+#     org.hibernate.orm.jdbc.bind: TRACE
+#     org.springframework.data.jpa: DEBUG
